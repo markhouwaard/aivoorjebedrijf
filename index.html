@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI voor je bedrijf | Minder avondwerk met AI, voor het mkb</title>
+<meta name="description" content="Wij zetten AI in voor mail, offertes en administratie, zodat je elke week een avond terug hebt. Voor bedrijven met 2 tot 20 mensen in de regio Den Haag en Rotterdam.">
+<!-- Nog niet vindbaar in Google: haal deze regel weg zodra mail, KvK en privacy geregeld zijn. -->
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://aivoorjebedrijf.nl/">
+<meta name="theme-color" content="#F4F7FC">
+<meta name="theme-color" content="#0A1428" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/apple-touch-icon.png" type="image/png" sizes="180x180">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:site_name" content="AI voor je bedrijf">
+<meta property="og:title" content="AI voor je bedrijf">
+<meta property="og:description" content="Elke week een avond terug. Wij zetten AI in voor mail, offertes en administratie.">
+<meta property="og:url" content="https://aivoorjebedrijf.nl/">
+<meta property="og:image" content="https://aivoorjebedrijf.nl/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Logo van AI voor je bedrijf">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "AI voor je bedrijf", "url": "https://aivoorjebedrijf.nl/", "email": "hallo@aivoorjebedrijf.nl", "description": "Wij zetten AI in voor mail, offertes en administratie, zodat je elke week een avond terug hebt. Voor bedrijven met 2 tot 20 mensen in de regio Den Haag en Rotterdam.", "areaServed": [{"@type": "City", "name": "Den Haag"}, {"@type": "City", "name": "Rotterdam"}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&amp;family=Figtree:wght@400..700&amp;display=swap">
+<style>[hidden]{display:none!important}img{max-width:100%}</style>
+<style>
+:root{
+  /* Layout: de avondplanner is de held, naast een grote kop. Daarna rustige typografie op papier, één luchtblauwe band voor de stappen en een avondblauwe band om af te sluiten. */
+  --paper:#F4F7FC;
+  --surface:#FFFFFF;
+  --sky:#DCE6F5;
+  --slot:#ECF1F9;
+  --ink:#0F2142;
+  --ink-soft:#4A5B7C;
+  --line:#CBD6E8;
+  --line-strong:#9DB0CF;
+  --coral:#FF5B39;
+  --coral-hover:#FF7254;
+  --on-coral:#0F2142;
+  --b1:#0F2142; --on-b1:#F4F7FC;
+  --b2:#2F4E86; --on-b2:#F4F7FC;
+  --b3:#4F6A99; --on-b3:#F4F7FC;
+  --band:#0F2142; --on-band:#EEF3FB; --on-band-soft:#A9BAD7; --band-field:#18305C; --band-line:#304878;
+  --shadow:rgba(15,33,66,.24);
+  --focus:#FF5B39;
+  --display:"Archivo","Arial Black","Helvetica Neue",Arial,sans-serif;
+  --body:"Figtree","Helvetica Neue",Arial,sans-serif;
+  --ease-out:cubic-bezier(.23,1,.32,1);
+  --ease-in-out:cubic-bezier(.77,0,.175,1);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0A1428; --surface:#0F1C38; --sky:#11234A; --slot:#16274B;
+    --ink:#E8EEF9; --ink-soft:#A3B3D1; --line:#263A66; --line-strong:#3E5689;
+    --coral:#FF6B4A; --coral-hover:#FF8466; --on-coral:#0A1428;
+    --b1:#C9D7EF; --on-b1:#0A1428; --b2:#93AAD3; --on-b2:#0A1428; --b3:#6B86B6; --on-b3:#0A1428;
+    --band:#13254D; --on-band:#EEF3FB; --on-band-soft:#A9BAD7; --band-field:#1C3364; --band-line:#34508A;
+    --shadow:rgba(0,0,0,.5); --focus:#FF6B4A;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0A1428; --surface:#0F1C38; --sky:#11234A; --slot:#16274B;
+  --ink:#E8EEF9; --ink-soft:#A3B3D1; --line:#263A66; --line-strong:#3E5689;
+  --coral:#FF6B4A; --coral-hover:#FF8466; --on-coral:#0A1428;
+  --b1:#C9D7EF; --on-b1:#0A1428; --b2:#93AAD3; --on-b2:#0A1428; --b3:#6B86B6; --on-b3:#0A1428;
+  --band:#13254D; --on-band:#EEF3FB; --on-band-soft:#A9BAD7; --band-field:#1C3364; --band-line:#34508A;
+  --shadow:rgba(0,0,0,.5); --focus:#FF6B4A;
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-wrap:break-word}
+@media (min-width:720px){body{font-size:18px}}
+h1,h2,h3{font-family:var(--display);color:inherit;margin:0;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+a{color:inherit}
+::selection{background:var(--sky);color:var(--ink)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}
+
+.wrap{width:100%;max-width:1200px;margin-inline:auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+@media (min-width:720px){.wrap{padding-left:max(32px, env(safe-area-inset-left, 0px));padding-right:max(32px, env(safe-area-inset-right, 0px))}}
+
+.skip{position:absolute;left:max(16px, env(safe-area-inset-left, 0px));top:calc(env(safe-area-inset-top, 0px) + 8px);z-index:20;background:var(--ink);color:var(--paper);padding:10px 14px;border-radius:8px;font-weight:600;text-decoration:none;transform:translateY(-160%);transition:transform 160ms var(--ease-out)}
+.skip:focus{transform:none}
+
+/* Knoppen */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 24px;border:0;border-radius:12px;background:var(--coral);color:var(--on-coral);font:700 17px/1.1 var(--body);text-decoration:none;cursor:pointer;transition:transform 160ms var(--ease-out),background-color 160ms ease}
+.btn:active{transform:scale(.97)}
+.btn-sm{min-height:44px;padding:0 18px;font-size:15px;border-radius:10px}
+@media (hover:hover) and (pointer:fine){.btn:hover{background:var(--coral-hover)}}
+
+/* Kop */
+.top-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:16px}
+.logo{display:inline-flex;align-items:center;gap:8px;min-height:44px;text-decoration:none;font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.01em;white-space:nowrap}
+.logo-ai{background:var(--coral);color:var(--on-coral);font-weight:800;font-stretch:125%;font-size:15px;line-height:1;padding:6px 8px 5px;border-radius:7px}
+.logo-rest{font-stretch:106%}
+.nav{display:flex;align-items:center;gap:4px}
+.nav a:not(.btn){display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border-radius:8px;text-decoration:none;font-weight:500;font-size:16px;color:var(--ink-soft);transition:color 160ms ease,background-color 160ms ease}
+@media (hover:hover) and (pointer:fine){.nav a:not(.btn):hover{color:var(--ink);background:var(--slot)}}
+.nav .btn-sm{margin-left:8px}
+@media (max-width:900px){.nav a:not(.btn){display:none}}
+@media (max-width:520px){.nav .btn-sm{display:none}}
+
+/* Held */
+.hero{padding-block:clamp(16px,3vw,40px) clamp(36px,5vw,64px)}
+.hero-in{display:grid;gap:clamp(32px,5vw,64px)}
+@media (min-width:980px){.hero-in{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:center}}
+.hero-copy{display:grid;gap:24px;align-content:center;min-width:0}
+h1{font-weight:800;font-stretch:118%;font-size:clamp(44px,6.1vw,86px);line-height:.94;letter-spacing:-.015em}
+.lead{font-size:clamp(18px,1.55vw,21px);color:var(--ink-soft);max-width:33ch}
+.cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px}
+.cta-note{font-size:15px;color:var(--ink-soft)}
+
+/* Avondplanner */
+.planner{display:grid;gap:18px;min-width:0;padding:clamp(16px,2.2vw,26px);background:var(--surface);border:1px solid var(--line);border-radius:22px;box-shadow:0 34px 64px -40px var(--shadow)}
+.pl-head{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:12px}
+.pl-title{font-family:var(--display);font-weight:700;font-stretch:108%;font-size:20px;line-height:1.2}
+.pl-sub{margin-top:2px;font-size:14.5px;line-height:1.4;color:var(--ink-soft)}
+.toggle{display:inline-flex;gap:4px;padding:4px;border-radius:12px;background:var(--slot)}
+.toggle button{appearance:none;min-height:44px;padding:0 16px;border:0;border-radius:9px;background:transparent;color:var(--ink-soft);font:600 15px/1 var(--body);cursor:pointer;transition:background-color 180ms ease,color 180ms ease,transform 160ms var(--ease-out)}
+.toggle button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.toggle button:active{transform:scale(.97)}
+@media (hover:hover) and (pointer:fine){.toggle button[aria-pressed="false"]:hover{color:var(--ink)}}
+
+.week{--evening:172px;--cap:3;display:grid;grid-template-columns:44px repeat(5,minmax(0,1fr));column-gap:8px;row-gap:10px}
+@media (max-width:520px){.week{--evening:160px;grid-template-columns:38px repeat(5,minmax(0,1fr));column-gap:6px}}
+.dl{font-size:13px;font-weight:600;line-height:1;text-align:center;color:var(--ink-soft)}
+.times{position:relative;height:var(--evening)}
+.times span{position:absolute;right:6px;top:calc(var(--p,0) * 1%);transform:translateY(-50%);font-size:12px;line-height:1;font-variant-numeric:tabular-nums;color:var(--ink-soft)}
+.day{position:relative;height:var(--evening);overflow:hidden;border-radius:12px;background-color:var(--slot);background-image:repeating-linear-gradient(to bottom,transparent 0,transparent calc(100% / var(--cap) - 1px),var(--line) calc(100% / var(--cap) - 1px),var(--line) calc(100% / var(--cap)))}
+.seg{position:absolute;left:4px;right:4px;top:calc(var(--t,0) * 1% + 2px);height:max(0px,calc(var(--h,0) * 1% - 4px));overflow:hidden;padding:6px 7px;border-radius:8px;font-size:12.5px;font-weight:600;line-height:1.15;opacity:1;transition:top 700ms var(--ease-in-out),height 700ms var(--ease-in-out),opacity 350ms ease;transition-delay:calc(var(--d,0) * 70ms)}
+.seg.c0{background:var(--b1);color:var(--on-b1)}
+.seg.c1{background:var(--b2);color:var(--on-b2)}
+.seg.c2{background:var(--b3);color:var(--on-b3)}
+.seg.vrij{background:var(--coral);color:var(--on-coral);font-weight:700}
+.seg.hide{opacity:0}
+.seg .lbl{display:block;white-space:nowrap;transition:opacity 200ms ease}
+.seg.nolabel .lbl{opacity:0}
+.week.narrow .seg:not(.vrij) .lbl{display:none}
+.planner.dragging .seg,.planner.instant .seg{transition:none}
+
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14px;color:var(--ink-soft)}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.legend i{width:12px;height:12px;border-radius:4px;background:var(--c)}
+
+.result{display:grid;gap:4px;padding-top:16px;border-top:1px solid var(--line)}
+.res-big{font-family:var(--display);font-weight:800;font-stretch:112%;font-size:clamp(28px,2.8vw,36px);line-height:1.05;letter-spacing:-.01em}
+.res-days{font-weight:600;font-size:17px}
+.res-year{font-size:15.5px;color:var(--ink-soft)}
+
+.sliders{display:grid;gap:14px}
+@media (min-width:600px){.sliders{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}}
+.sl{display:grid;gap:4px;min-width:0}
+.sl-top{display:flex;justify-content:space-between;gap:10px;font-size:15px}
+.sl-top label{font-weight:500}
+.sl-top output{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+input[type="range"]{-webkit-appearance:none;appearance:none;width:100%;height:30px;margin:0;background:transparent;cursor:pointer}
+input[type="range"]::-webkit-slider-runnable-track{height:6px;border-radius:3px;background:linear-gradient(to right,var(--c) 0 var(--fill,50%),var(--line) var(--fill,50%) 100%)}
+input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;margin-top:-8px;border-radius:50%;background:var(--surface);border:3px solid var(--c);transition:transform 160ms var(--ease-out)}
+input[type="range"]:active::-webkit-slider-thumb{transform:scale(1.12)}
+input[type="range"]::-moz-range-track{height:6px;border-radius:3px;background:var(--line)}
+input[type="range"]::-moz-range-progress{height:6px;border-radius:3px;background:var(--c)}
+input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--surface);border:3px solid var(--c)}
+input[type="range"]:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:8px}
+.fine{font-size:13px;line-height:1.45;color:var(--ink-soft)}
+
+/* Secties */
+.sec{padding-block:clamp(52px,7vw,88px)}
+h2{font-weight:800;font-stretch:112%;font-size:clamp(34px,4.3vw,56px);line-height:1;letter-spacing:-.012em}
+.two{display:grid;gap:clamp(28px,4vw,56px)}
+@media (min-width:980px){
+  .two{grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr)}
+  .sticky{position:sticky;top:calc(env(safe-area-inset-top, 0px) + 32px);align-self:start}
+}
+.sec-head{display:grid;gap:18px;min-width:0}
+.sec-head p{color:var(--ink-soft);max-width:38ch}
+
+.tasks{display:grid;min-width:0}
+.task{display:grid;grid-template-columns:14px minmax(0,1fr);column-gap:18px;row-gap:6px;padding-block:22px;border-top:1px solid var(--line)}
+.task.last{border-bottom:1px solid var(--line)}
+.chip{grid-row:span 2;width:14px;height:14px;margin-top:.55em;border-radius:4px;background:var(--c)}
+.chip.open{background:transparent;border:2px solid var(--line-strong)}
+.task h3{font-weight:700;font-stretch:108%;font-size:clamp(22px,2.3vw,28px);line-height:1.15}
+.task p{color:var(--ink-soft);max-width:52ch}
+.tasks-sub{padding:34px 0 12px;font-size:16px;font-weight:600;color:var(--ink-soft)}
+
+.band-sky{background:var(--sky)}
+.route-head{max-width:20ch}
+.route{position:relative;display:grid;gap:30px;margin:clamp(32px,4vw,52px) 0 0;padding:0;list-style:none}
+.route::before{content:"";position:absolute;left:21px;top:10px;bottom:10px;width:2px;background:var(--line-strong)}
+.route li{position:relative;display:grid;gap:8px;align-content:start;padding-left:66px;min-width:0}
+.num{position:absolute;left:0;top:0;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--sky);border:2px solid var(--ink);font-family:var(--display);font-weight:800;font-stretch:115%;font-size:18px;line-height:1}
+.route h3{padding-top:10px;font-weight:700;font-stretch:104%;font-size:20px;line-height:1.2}
+.price{font-family:var(--display);font-weight:800;font-stretch:115%;font-size:clamp(30px,3vw,38px);line-height:1.05;letter-spacing:-.01em}
+.price small{font-family:var(--body);font-stretch:100%;font-size:15px;font-weight:600;letter-spacing:0;color:var(--ink-soft)}
+.route .step-text{font-size:16.5px;color:var(--ink-soft)}
+@media (min-width:900px){
+  .route{grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}
+  .route::before{left:0;right:0;top:21px;bottom:auto;width:auto;height:2px}
+  .route li{padding-left:0;padding-top:66px}
+  .route h3{padding-top:0}
+}
+.route-note{max-width:70ch;margin-top:clamp(28px,3.5vw,44px);font-size:15.5px;color:var(--ink-soft)}
+
+
+.faq{display:grid;min-width:0}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:44px;padding:20px 0;list-style:none;cursor:pointer;font-weight:600;font-size:clamp(18px,1.6vw,20px);line-height:1.3}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";flex:none;width:14px;height:14px;background:linear-gradient(var(--ink),var(--ink)) center/100% 2px no-repeat,linear-gradient(var(--ink),var(--ink)) center/2px 100% no-repeat;transition:transform 220ms var(--ease-out)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.ans{max-width:60ch;padding:0 0 22px;color:var(--ink-soft);transition:opacity 260ms ease,transform 260ms var(--ease-out)}
+@starting-style{.faq details[open] .ans{opacity:0;transform:translateY(-4px)}}
+
+/* Afsluiting */
+.band-ink{background:var(--band);color:var(--on-band)}
+.end{display:grid;gap:clamp(28px,4vw,48px);padding-block:clamp(52px,7vw,88px) clamp(36px,4vw,56px)}
+@media (min-width:900px){.end{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:end}}
+.end-copy{display:grid;gap:18px;min-width:0}
+.end-copy h2{font-size:clamp(38px,5.2vw,70px);line-height:.98}
+.end-copy p{max-width:40ch;color:var(--on-band-soft)}
+.contact{display:grid;gap:18px;justify-items:start;min-width:0}
+.mail{font-family:var(--display);font-weight:700;font-stretch:106%;font-size:clamp(24px,2.8vw,34px);line-height:1.15;letter-spacing:-.005em;color:var(--on-band);overflow-wrap:anywhere;user-select:all;-webkit-user-select:all}
+.contact-actions{display:flex;flex-wrap:wrap;gap:12px}
+.copy{min-height:52px;padding:0 20px;border:1px solid var(--band-line);border-radius:12px;background:transparent;color:var(--on-band);font:600 16px/1 var(--body);cursor:pointer;transition:background-color 160ms ease,transform 160ms var(--ease-out)}
+.copy:active{transform:scale(.97)}
+@media (hover:hover) and (pointer:fine){.copy:hover{background:var(--band-field)}}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;padding-block:24px 36px;border-top:1px solid var(--band-line);font-size:14.5px;color:var(--on-band-soft)}
+.foot strong{font-family:var(--display);font-stretch:106%;color:var(--on-band)}
+
+@media (prefers-reduced-motion: reduce){
+  .seg{transition:opacity 200ms ease;transition-delay:0ms}
+  .btn:active,.toggle button:active,.copy:active{transform:none}
+  .skip,.faq summary::after,.ans{transition:none}
+}
+</style>
+</head>
+<body>
+
+<div class="site" lang="nl">
+<a class="skip" href="#inhoud">Naar de inhoud</a>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="logo" href="#inhoud" aria-label="AI voor je bedrijf"><span class="logo-ai">AI</span><span class="logo-rest">voor je bedrijf</span></a>
+    <nav class="nav" aria-label="Hoofdmenu">
+      <a href="#wat">Wat we doen</a>
+      <a href="#prijzen">Prijzen</a>
+      <a href="#vragen">Vragen</a>
+      <a class="btn btn-sm" href="#kennismaking">Plan een kennismaking</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inhoud">
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div class="hero-copy">
+        <h1>Elke week een avond terug.</h1>
+        <p class="lead">Wij zetten AI in voor het werk dat nu je avonden kost: mail, offertes en administratie. Zonder dat je het hoeft te snappen.</p>
+        <div class="cta-row">
+          <a class="btn" href="#kennismaking">Plan een gratis kennismaking</a>
+          <p class="cta-note">30 minuten, bij je op de zaak of via video.</p>
+        </div>
+      </div>
+
+      <div class="planner" id="planner">
+        <div class="pl-head">
+          <div>
+            <p class="pl-title">Jouw avonden</p>
+            <p class="pl-sub">Een voorbeeldweek. Schuif hieronder naar je eigen uren.</p>
+          </div>
+          <div class="toggle" role="group" aria-label="Weergave van de week">
+            <button type="button" id="t-nu" aria-pressed="true">Zonder AI</button>
+            <button type="button" id="t-ai" aria-pressed="false">Met AI</button>
+          </div>
+        </div>
+
+        <div class="week" id="week" aria-hidden="true">
+          <span></span><span class="dl">ma</span><span class="dl">di</span><span class="dl">wo</span><span class="dl">do</span><span class="dl">vr</span>
+          <div class="times" id="times"></div>
+          <div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div>
+        </div>
+
+        <div class="legend" aria-hidden="true">
+          <span><i style="--c:var(--b1)"></i>Mail</span>
+          <span><i style="--c:var(--b2)"></i>Offertes</span>
+          <span><i style="--c:var(--b3)"></i>Administratie</span>
+          <span><i style="--c:var(--coral)"></i>Vrij</span>
+        </div>
+
+        <div class="result" aria-live="polite">
+          <p class="res-big"><span id="res-uur">4 uur</span> per week terug</p>
+          <p class="res-days" id="res-days">Je donderdag- en vrijdagavond zijn weer vrij.</p>
+          <p class="res-year" id="res-year">Dat is 179 uur per jaar. Bij €&nbsp;60 per uur is dat €&nbsp;10.760.</p>
+        </div>
+
+        <div class="sliders">
+          <div class="sl">
+            <div class="sl-top"><label for="r-mail">Mail</label><output id="o-mail" for="r-mail">5 uur</output></div>
+            <input type="range" id="r-mail" min="0" max="8" step="1" value="5" style="--c:var(--b1)">
+          </div>
+          <div class="sl">
+            <div class="sl-top"><label for="r-offerte">Offertes</label><output id="o-offerte" for="r-offerte">4 uur</output></div>
+            <input type="range" id="r-offerte" min="0" max="6" step="1" value="4" style="--c:var(--b2)">
+          </div>
+          <div class="sl">
+            <div class="sl-top"><label for="r-admin">Administratie</label><output id="o-admin" for="r-admin">4 uur</output></div>
+            <input type="range" id="r-admin" min="0" max="6" step="1" value="4" style="--c:var(--b3)">
+          </div>
+        </div>
+
+        <p class="fine">Uren per week. We rekenen met 30% tijdwinst en 46 werkweken. Onderzoek van MIT mat 40% tijdwinst bij schrijfwerk met ChatGPT (Science, 2023).</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="wat">
+    <div class="wrap two">
+      <div class="sec-head sticky">
+        <h2>Waar de tijd vandaan komt.</h2>
+        <p>Voor bedrijven met 2 tot 20 mensen. Misschien gebruik je ChatGPT al los. Wij bouwen AI in de programma's die je al hebt, zodat het werk echt minder wordt.</p>
+      </div>
+      <div class="tasks">
+        <div class="task">
+          <span class="chip" style="--c:var(--b1)"></span>
+          <h3>Mail en klantvragen</h3>
+          <p>Mail komt gesorteerd binnen, met een conceptantwoord klaar. Jij leest het na en drukt op verstuur.</p>
+        </div>
+        <div class="task">
+          <span class="chip" style="--c:var(--b2)"></span>
+          <h3>Offertes</h3>
+          <p>Na het bezoek stuur je een paar foto's en een spraakbericht. De concept-offerte staat klaar in je eigen huisstijl.</p>
+        </div>
+        <div class="task last">
+          <span class="chip" style="--c:var(--b3)"></span>
+          <h3>Administratie</h3>
+          <p>Bonnetjes en facturen gaan vanzelf naar de juiste plek in je boekhouding.</p>
+        </div>
+        <p class="tasks-sub">Ook voor je website en je team</p>
+        <div class="task">
+          <span class="chip open"></span>
+          <h3>Je website</h3>
+          <p>Snel en goed te vinden in Google en ChatGPT, met een assistent die 's avonds vragen beantwoordt.</p>
+        </div>
+        <div class="task last">
+          <span class="chip open"></span>
+          <h3>Je team</h3>
+          <p>Eén training op jullie eigen werk, plus een AI-huisregel van één A4 die iedereen snapt.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec band-sky" id="prijzen">
+    <div class="wrap">
+      <h2 class="route-head">Vier stappen, met een vaste prijs per stap.</h2>
+      <ol class="route">
+        <li>
+          <span class="num" aria-hidden="true">1</span>
+          <h3>Kennismaken</h3>
+          <p class="price">Gratis</p>
+          <p class="step-text">Een half uur bij je op de zaak of via video. Je hoort eerlijk of AI je helpt.</p>
+        </li>
+        <li>
+          <span class="num" aria-hidden="true">2</span>
+          <h3>AI-scan</h3>
+          <p class="price">€&nbsp;295</p>
+          <p class="step-text">We kijken een dagdeel mee en geven je de drie grootste tijdwinsten, elk met een vaste prijs.</p>
+        </li>
+        <li>
+          <span class="num" aria-hidden="true">3</span>
+          <h3>Bouwen</h3>
+          <p class="price"><small>vanaf</small> €&nbsp;750</p>
+          <p class="step-text">In 2 tot 4 weken, in de programma's die je al gebruikt. We testen met je team tot het werkt.</p>
+        </li>
+        <li>
+          <span class="num" aria-hidden="true">4</span>
+          <h3>Bijhouden</h3>
+          <p class="price"><small>vanaf</small> €&nbsp;99 <small>per&nbsp;maand</small></p>
+          <p class="step-text">Een vaste hulplijn en onderhoud. Maandelijks opzegbaar.</p>
+        </li>
+      </ol>
+      <p class="route-note">De scan verrekenen we als je binnen 30 dagen een project start. Ook los te boeken: een nieuwe website vanaf €&nbsp;1.450 en een teamtraining van €&nbsp;595 per dagdeel. Alle prijzen zijn exclusief btw.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="vragen">
+    <div class="wrap two">
+      <div class="sec-head sticky">
+        <h2>Vragen van ondernemers.</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Moet ik zelf technisch zijn?</summary>
+          <div class="ans"><p>Nee. Jij vertelt hoe je werkt, wij regelen de techniek. Je krijgt uitleg in gewone taal en een korte handleiding voor je team.</p></div>
+        </details>
+        <details>
+          <summary>Wat gebeurt er met mijn gegevens?</summary>
+          <div class="ans"><p>We werken met zakelijke versies van AI-tools, die je gegevens niet gebruiken om de AI te trainen. Alles draait op jouw eigen accounts, en met elke klant sluiten we een verwerkersovereenkomst.</p></div>
+        </details>
+        <details>
+          <summary>Wat kosten de AI-tools zelf?</summary>
+          <div class="ans"><p>De meeste zakelijke AI-tools kosten tussen de 6 en 30 euro per gebruiker per maand. Die sluit je zelf af, zodat het abonnement op jouw naam staat.</p></div>
+        </details>
+        <details>
+          <summary>Zit ik ergens aan vast?</summary>
+          <div class="ans"><p>Nee. Elke stap heeft een vaste prijs en je beslist per stap of je verdergaat. De hulplijn is maandelijks opzegbaar.</p></div>
+        </details>
+        <details>
+          <summary>Wie zitten erachter?</summary>
+          <div class="ans"><p>Twee ondernemers uit de regio Den Haag en Rotterdam die zelf dagelijks met AI werken. Je praat altijd met degene die het voor je bouwt.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<section class="band-ink" id="kennismaking">
+  <div class="wrap end">
+    <div class="end-copy">
+      <h2>Plan een gratis kennismaking.</h2>
+      <p>Een half uur, bij je op de zaak of via video. Mail ons en we spreken een moment af dat jou uitkomt.</p>
+    </div>
+    <div class="contact">
+      <p class="mail" id="mail">hallo@aivoorjebedrijf.nl</p>
+      <div class="contact-actions">
+        <a class="btn" href="mailto:hallo@aivoorjebedrijf.nl?subject=Kennismaking">Mail ons</a>
+        <button type="button" class="copy" id="copy">Kopieer adres</button>
+      </div>
+    </div>
+  </div>
+  <footer class="wrap">
+    <div class="foot">
+      <strong>AI voor je bedrijf</strong>
+      <span>Regio Den Haag en Rotterdam</span>
+      <span>© 2026</span>
+    </div>
+  </footer>
+</section>
+</div>
+
+<script>
+(function(){
+  var SAVE = 0.30, WEEKS = 46, RATE = 60;
+  var DAYNAMES = ['maandag','dinsdag','woensdag','donderdag','vrijdag'];
+  var LABELS = ['Mail','Offertes','Admin'];
+  var planner = document.getElementById('planner');
+  var week = document.getElementById('week');
+  var timesEl = document.getElementById('times');
+  var days = Array.prototype.slice.call(week.querySelectorAll('.day'));
+  var inputs = ['r-mail','r-offerte','r-admin'].map(function(id){ return document.getElementById(id); });
+  var outs = ['o-mail','o-offerte','o-admin'].map(function(id){ return document.getElementById(id); });
+  var btnNu = document.getElementById('t-nu');
+  var btnAi = document.getElementById('t-ai');
+  var resUur = document.getElementById('res-uur');
+  var resDays = document.getElementById('res-days');
+  var resYear = document.getElementById('res-year');
+  var nf = new Intl.NumberFormat('nl-NL');
+  var mode = 'nu', autoT = null, dragT = null, acted = false, lastW = 0;
+  var reduce = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+  function makeSeg(cls, text, d, parent){
+    var el = document.createElement('div');
+    el.className = 'seg ' + cls + ' hide';
+    el.style.setProperty('--d', d);
+    var s = document.createElement('span');
+    s.className = 'lbl';
+    s.textContent = text;
+    el.appendChild(s);
+    parent.appendChild(el);
+    return el;
+  }
+  var segs = days.map(function(dayEl, d){
+    return {
+      row: LABELS.map(function(lab, c){ return makeSeg('c' + c, lab, d, dayEl); }),
+      v: makeSeg('vrij', 'Vrij', d, dayEl)
+    };
+  });
+
+  /* Zet de uren achter elkaar in de avonden, vanaf maandag. */
+  function stack(hours, cap){
+    var out = [[], [], [], [], []], per = [0, 0, 0, 0, 0], d = 0, used = 0;
+    hours.forEach(function(h, c){
+      var rest = h;
+      while (rest > 1e-6 && d < 5){
+        var take = Math.min(cap - used, rest);
+        out[d][c] = { start: used, len: take };
+        used += take; per[d] += take; rest -= take;
+        if (cap - used < 1e-6){ d++; used = 0; }
+      }
+    });
+    return { out: out, per: per };
+  }
+  function fmt(x){
+    if (x <= 0.001) return '0 uur';
+    if (x < 1) return Math.max(5, Math.round(x * 12) * 5) + ' minuten';
+    if (x < 2){ var r = Math.round(x * 2) / 2; return String(r).replace('.', ',') + ' uur'; }
+    return Math.round(x) + ' uur';
+  }
+  function joinDays(list){
+    var n = list.map(function(i){ return DAYNAMES[i]; });
+    if (n.length === 1) return n[0] + 'avond';
+    return n.slice(0, -1).map(function(x){ return x + '-'; }).join(', ') + ' en ' + n[n.length - 1] + 'avond';
+  }
+  function drawTimes(cap){
+    if (timesEl.getAttribute('data-cap') === String(cap)) return;
+    timesEl.setAttribute('data-cap', String(cap));
+    timesEl.textContent = '';
+    for (var i = 0; i <= cap; i++){
+      var s = document.createElement('span');
+      s.style.setProperty('--p', i / cap * 100);
+      s.textContent = String((19 + i) % 24).padStart(2, '0') + ':00';
+      timesEl.appendChild(s);
+    }
+    week.style.setProperty('--cap', cap);
+  }
+  function place(el, top, h){
+    el.style.setProperty('--t', top);
+    el.style.setProperty('--h', h);
+  }
+
+  function render(){
+    var h = inputs.map(function(i){ return Number(i.value); });
+    inputs.forEach(function(inp, i){
+      outs[i].textContent = h[i] + ' uur';
+      inp.style.setProperty('--fill', (h[i] / Number(inp.max) * 100) + '%');
+    });
+    var total = h[0] + h[1] + h[2];
+    var cap = Math.max(3, Math.ceil(total / 5));
+    drawTimes(cap);
+    var now = stack(h, cap);
+    var ai = stack(h.map(function(x){ return x * (1 - SAVE); }), cap);
+    var cur = mode === 'ai' ? ai : now;
+    var px = days[0].clientHeight || 172;
+    var minH = 22 / px * cap;
+    week.classList.toggle('narrow', days[0].clientWidth < 64);
+
+    segs.forEach(function(s, d){
+      s.row.forEach(function(el, c){
+        var g = cur.out[d][c];
+        if (g && g.len > 1e-6){
+          place(el, g.start / cap * 100, g.len / cap * 100);
+          el.classList.remove('hide');
+          el.classList.toggle('nolabel', g.len < minH);
+        } else {
+          el.style.setProperty('--h', 0);
+          el.classList.add('hide');
+        }
+      });
+      var freed = Math.max(0, now.per[d] - ai.per[d]);
+      if (mode === 'ai' && freed > 0.02){
+        place(s.v, ai.per[d] / cap * 100, freed / cap * 100);
+        s.v.classList.remove('hide');
+        s.v.classList.toggle('nolabel', freed < minH);
+      } else {
+        place(s.v, now.per[d] / cap * 100, 0);
+        s.v.classList.add('hide');
+      }
+    });
+
+    var saved = total * SAVE;
+    resUur.textContent = fmt(saved);
+    var freedDays = [0, 1, 2, 3, 4].filter(function(d){ return now.per[d] > 1e-6 && ai.per[d] < 0.25; });
+    if (!total){
+      resDays.textContent = 'Schuif de uren naar je eigen week.';
+    } else if (freedDays.length){
+      resDays.textContent = 'Je ' + joinDays(freedDays) + (freedDays.length > 1 ? ' zijn' : ' is') + ' weer vrij.';
+    } else {
+      var last = [0, 1, 2, 3, 4].filter(function(d){ return now.per[d] > 1e-6; }).pop();
+      resDays.textContent = 'Je ' + DAYNAMES[last] + 'avond is ' + fmt(now.per[last] - ai.per[last]) + ' korter.';
+    }
+    resYear.textContent = total
+      ? 'Dat is ' + nf.format(Math.round(saved * WEEKS)) + ' uur per jaar. Bij € 60 per uur is dat € ' + nf.format(Math.round(saved * WEEKS * RATE / 10) * 10) + '.'
+      : 'Zet bij elk onderdeel je uren per week.';
+  }
+
+  function setMode(m, instant){
+    mode = m;
+    btnNu.setAttribute('aria-pressed', String(m === 'nu'));
+    btnAi.setAttribute('aria-pressed', String(m === 'ai'));
+    if (instant) planner.classList.add('instant');
+    render();
+    if (instant){
+      void planner.offsetHeight;
+      requestAnimationFrame(function(){ planner.classList.remove('instant'); });
+    }
+  }
+  function act(){
+    acted = true;
+    if (autoT){ clearTimeout(autoT); autoT = null; }
+  }
+  btnNu.addEventListener('click', function(){ act(); setMode('nu'); });
+  btnAi.addEventListener('click', function(){ act(); setMode('ai'); });
+  inputs.forEach(function(inp){
+    inp.addEventListener('input', function(){
+      act();
+      planner.classList.add('dragging');
+      clearTimeout(dragT);
+      dragT = setTimeout(function(){ planner.classList.remove('dragging'); }, 220);
+      render();
+    });
+  });
+  if (window.ResizeObserver){
+    new ResizeObserver(function(){
+      var w = week.clientWidth;
+      if (Math.abs(w - lastW) < 1) return;
+      lastW = w;
+      setMode(mode, true);
+    }).observe(week);
+  }
+
+  setMode(reduce ? 'ai' : 'nu', true);
+  if (!reduce){
+    autoT = setTimeout(function(){ if (!acted) setMode('ai'); }, 1400);
+  }
+
+  /* Mailadres kopiëren, met selecteren als terugval. */
+  var copyBtn = document.getElementById('copy');
+  var mailEl = document.getElementById('mail');
+  var copyT = null;
+  copyBtn.addEventListener('click', function(){
+    var txt = mailEl.textContent.trim();
+    function done(label){
+      copyBtn.textContent = label;
+      clearTimeout(copyT);
+      copyT = setTimeout(function(){ copyBtn.textContent = 'Kopieer adres'; }, 1800);
+    }
+    function fallback(){
+      var r = document.createRange();
+      r.selectNodeContents(mailEl);
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(r);
+      done('Geselecteerd');
+    }
+    try {
+      navigator.clipboard.writeText(txt).then(function(){ done('Gekopieerd'); }, fallback);
+    } catch (err){
+      fallback();
+    }
+  });
+})();
+</script>
+</body>
+</html>
