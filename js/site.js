@@ -124,6 +124,8 @@
       portaal: () => [mini([['Warmtepomp, fase 2', 'Loopt'], ['Offerte fase 2', 'Getekend']]), el('small', '', '3 klanten online')],
       rapport: () => [sk('bars', 6, [42, 51, 47, 63, 70, 88]), el('small', '', 'Omzet per maand')],
       ai: () => [el('p', 'msg', 'Zal ik de offerte voor Van Dalen klaarzetten?'), el('p', 'msg msg--me', 'Ja, graag')],
+      chatbot: () => [el('p', 'msg msg--me', 'Kan ik zaterdag langskomen?'), el('p', 'msg', 'Om 10:30 is er nog plek.')],
+      flow: () => [mini([['Aanvraag naar CRM', '14x'], ['Factuur naar boekhouding', '23x'], ['Herinnering', '3x']])],
     };
     const custom = () => [mini([['Jouw velden', ''], ['Jouw stappen', ''], ['Jouw rechten', '']])];
     const render = () => {
