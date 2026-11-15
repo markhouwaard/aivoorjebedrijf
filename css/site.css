@@ -822,3 +822,40 @@ h3, .h3 { line-height: 1.2; }
 .faq__item[open] summary::after { transform: rotate(45deg); }
 .faq__item p { padding: 0 0 20px; color: var(--muted); max-width: 60ch; }
 .foot .small a { color: var(--ink); }
+/* ===== calmer landing ===== */
+/* a quieter headline, and the row of systems stands still */
+.hero .display { font-size: clamp(44px, 6.6vw, 100px); line-height: 1.02; }
+.hero__copy { gap: 26px; }
+.wall--still { padding-bottom: 0; animation: none !important; }
+.wall--still .wall__row--a { animation: none !important; transform: translateX(-180px); }
+.wall--still .win { height: 300px; }
+.hero { padding-bottom: 64px; }
+
+/* what we do: three columns of plain text, numbered, no icons */
+.pillars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gutter); }
+.pillars li { display: grid; gap: 14px; align-content: start; padding-top: 22px; border-top: 1px solid var(--line-strong); }
+.pillars__n { font-size: 14px; font-weight: 600; color: var(--accent-text); }
+.pillars h3 { font-size: clamp(22px, 2vw, 28px); line-height: 1.15; }
+.pillars p { color: var(--muted); font-size: 17px; line-height: 1.55; }
+.pillars .link { justify-self: start; margin-top: 4px; font-size: 16px; }
+
+/* "also possible" as plain text */
+.more ul li { padding: 12px 0; border-top: 1px solid var(--line); font-weight: 500; }
+
+/* closing: heading left, invitation right */
+.close { padding-block: clamp(80px, 9vw, 128px) clamp(56px, 6vw, 88px); }
+.close__plain { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: var(--gutter); align-items: end; }
+.close__plain h2 { font-size: clamp(40px, 5.6vw, 84px); line-height: 1.02; max-width: 12ch; }
+.close__side { display: grid; gap: 24px; }
+.close__side .btn--ghost { font-weight: 500; }
+
+@media (max-width: 1023px) {
+  .pillars, .close__plain { grid-template-columns: minmax(0, 1fr); }
+  .pillars { row-gap: 40px; }
+}
+@media (max-width: 639px) {
+  .wall--still .wall__row--a { transform: translateX(-60px); }
+  .wall--still .win { height: 250px; }
+  .hero .display { font-size: 46px; }
+  .close__side .hero__actions .btn { flex: 1 1 100%; }
+}
